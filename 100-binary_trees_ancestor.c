@@ -10,11 +10,11 @@
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		const binary_tree_t *second)
 {
-	const binary_tree_t *leftancestor, *rightancestor;
+	const binary_tree_t *leftCA, *rightCA;
 
-	for (leftancestor = first; leftancestor; leftancestor = leftancestor->parent)
-		for (rightancestor = second; rightancestor; rightancestor = rightancestor->parent)
-			if (leftancestor == rightancestor)
-				return ((binary_tree_t *)leftancestor);
+	for (leftCA = first; leftCA; leftCA = leftCA->parent)
+		for (rightCA = second; rightCA; rightCA = rightCA->parent)
+			if (leftCA == rightCA)
+				return ((binary_tree_t *)leftCA);
 	return (NULL);
 }
